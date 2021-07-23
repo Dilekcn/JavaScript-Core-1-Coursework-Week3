@@ -4,6 +4,9 @@
 */
 
 // write your code here
+function longNameThatStartsWithA(name){
+  return name.length > 6;
+}
 
 var names = [
   "Rakesh",
