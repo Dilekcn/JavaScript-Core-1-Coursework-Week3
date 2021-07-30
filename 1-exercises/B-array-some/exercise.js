@@ -14,6 +14,13 @@ var pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 
 var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
+function isNull(num){
+  return num ===null;
+  
+}
+var containsNull = pairsByIndex.some(isNull);
+console.log(containsNull)
+
 
 var pairs = pairsByIndex.map(function (indexes) {
   var student = students[indexes[0]];

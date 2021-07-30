@@ -3,17 +3,24 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(num) {
+  console.log(num.slice(0,5))
 }
-
+first5([1,2,3,4,5,6,7,8,9])
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+
+function sortArray(a) {
+ 
+let newArr = a.sort()
+console.log(newArr)
+
 }
 
+sortArray(["k","r","p","d","a","v","s","g","l"])
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
 Think about what is better about this solution than your one last week, and what is worse.
@@ -24,18 +31,33 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
-}
+function tidyUpString(array) {
+  // console.log(array)
+  
+  console.log(array.map(arr =>{return arr.trim().replace("/", "").toLowerCase(); }))
 
+
+}
+tidyUpString([
+  "/Daniel",
+  " /Sanyia",
+  "AnTHonY",
+  "irina",
+  " Gordon",
+  "ashleigh   ",
+  "   Alastair  ",
+  " anne marie  ",
+])
 /*
 Write a function that:
 - Takes an array and an index as input.
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr,i) {
+  return arr.slice(0, i).concat(arr.slice(i + 1));
 }
-
+console.log(remove([1,5,2,3,4,6,7,8],3));
 /*
 Write a function that:
 - Takes an array of numbers as input.
@@ -44,9 +66,21 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
-}
+function formatPercentage(numbers) {
+  return numbers.map( number =>{
+    if(number> 100){
+      return "100%"
+    }else if(number<10){
+      return Math.round(number *10 )+ "%"
+    }else{
+      return  Math.round(number) +"%" 
+    }
+    
+  } )
 
+
+}
+console.log(formatPercentage([12,1.5,300,3.8]))
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {
