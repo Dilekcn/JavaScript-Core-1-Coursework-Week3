@@ -22,7 +22,15 @@
 */
 
 function isBushSafe(berryArray) {
-  //Write your code here
+let safe = berryArray.every(berry =>{
+  return berry ==="pink"
+})
+if(safe){
+  return "safe"
+}else{
+  return "not safe"
+}
+ 
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
